@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/date-counter/static/css/main.78c10360.css",
+    "main.js": "/date-counter/static/js/main.44f79571.js",
+    "index.html": "/date-counter/index.html",
+    "main.78c10360.css.map": "/date-counter/static/css/main.78c10360.css.map",
+    "main.44f79571.js.map": "/date-counter/static/js/main.44f79571.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78c10360.css",
+    "static/js/main.44f79571.js"
+  ]
+}
