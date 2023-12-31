@@ -15,6 +15,11 @@ function Counter() {
     setCount((c) => c - step);
   }
 
+  function handleReset() {
+    setCount((c) => 0);
+    setStep((s) => 1);
+  }
+
   return (
     <div className="counter">
       <div>
@@ -44,6 +49,11 @@ function Counter() {
         {count > 0 ? count : count * -1} day(s) {count >= 0 ? "from" : "ago"}{" "}
         today is {today.toDateString()}
       </div>
+      {count !== 0 || step !== 1 ? (
+        <div>
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      ) : null}
     </div>
   );
 }
