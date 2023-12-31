@@ -7,12 +7,6 @@ function Counter() {
   const today = new Date();
   today.setDate(today.getDate() + count);
 
-  function handleNextStep() {
-    setStep((s) => s + 1);
-  }
-  function handlePreviousStep() {
-    if (step > 1) setStep((s) => s - 1);
-  }
   function handleNextCount() {
     setCount((c) => c + step);
   }
@@ -24,19 +18,24 @@ function Counter() {
   return (
     <div className="counter">
       <div>
-        <button className="counter-sign" onClick={handlePreviousStep}>
-          &minus;
-        </button>
-        <span className="counter-display">Steps : {step}</span>
-        <button className="counter-sign" onClick={handleNextStep}>
-          &#43;
-        </button>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        />
+        <span> step : {step}</span>
       </div>
       <div>
         <button className="counter-sign" onClick={handlePreviousCount}>
           &minus;
         </button>
-        <span className="counter-display">Count : {count}</span>
+        <input
+          value={count}
+          className="count-input"
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button className="counter-sign" onClick={handleNextCount}>
           &#43;
         </button>
